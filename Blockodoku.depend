@@ -1,19 +1,23 @@
 # depslib dependency file v1.0
 1612617273 source:d:\code blocks\my trails\blockodoku\block.cpp
 
-1612629374 source:d:\code blocks\my trails\blockodoku\main.cpp
+1612882472 source:d:\code blocks\my trails\blockodoku\main.cpp
 	<Grid.h>
-	<windows.h>
 
-1612626212 d:\code blocks\my trails\blockodoku\include\grid.h
+1612882833 d:\code blocks\my trails\blockodoku\include\grid.h
 	<Block.h>
 
-1612629029 d:\code blocks\my trails\blockodoku\include\block.h
+1612881534 d:\code blocks\my trails\blockodoku\include\block.h
 	<iostream>
 	<vector>
 	<utility>
+	<chrono>
+	<thread>
+	<fstream>
+	<cstdio>
+	<cstring>
 
-1612619484 source:d:\code blocks\my trails\blockodoku\src\grid.cpp
+1612630307 source:d:\code blocks\my trails\blockodoku\src\grid.cpp
 
-1612619558 source:d:\code blocks\my trails\blockodoku\src\block.cpp
+1612630307 source:d:\code blocks\my trails\blockodoku\src\block.cpp
 

@@ -4,6 +4,11 @@
 #include<iostream>
 #include <vector>
 #include <utility> // for pair
+#include <chrono>
+#include <thread>
+#include <fstream>
+#include <cstdio>
+#include <cstring>
 
 using namespace std;
 
@@ -14,6 +19,7 @@ private:
 protected:
     vector<vector<char>> shape;
 public:
+    int type;
     void set_position(int x, int y) {
         this -> x = x;
         this -> y = y;
@@ -59,6 +65,7 @@ class Block_single: public Block {
 public:
     Block_single() {
         set_shape();
+        type = 0;
     }
     void set_shape() {
         shape.push_back({'o'});
@@ -69,6 +76,7 @@ class Block_hor_bar: public Block {
 public:
     Block_hor_bar() {
         set_shape();
+        type = 1;
     }
     void set_shape() {
         shape.push_back({'o', 'o', 'o'});
@@ -79,6 +87,7 @@ class Block_ver_bar: public Block {
 public:
     Block_ver_bar() {
         set_shape();
+        type = 2;
     }
     void set_shape() {
         shape.push_back({'o'});
@@ -91,6 +100,7 @@ class Block_square: public Block {
 public:
     Block_square() {
         set_shape();
+        type = 3;
     }
     void set_shape() {
         shape.push_back({'o', 'o'});
@@ -102,6 +112,7 @@ class Block_l: public Block {
 public:
     Block_l() {
         set_shape();
+        type = 4;
     }
     void set_shape() {
         shape.push_back({'o'});
@@ -113,6 +124,7 @@ class Block_mirror_l: public Block {
 public:
     Block_mirror_l() {
         set_shape();
+        type = 5;
     }
     void set_shape() {
         shape.push_back({' ' , 'o'});
@@ -120,25 +132,27 @@ public:
     }
 };
 
-class Block_inv_t: public Block {
-public:
-    Block_inv_t() {
-        set_shape();
-    }
-    void set_shape() {
-        shape.push_back({' ' , 'o'});
-        shape.push_back({'o', 'o', 'o'});
-    }
-};
-
 class Block_t: public Block {
 public:
     Block_t() {
         set_shape();
+        type = 6;
     }
     void set_shape() {
         shape.push_back({'o', 'o', 'o'});
         shape.push_back({' ' , 'o'});
+    }
+};
+
+class Block_inv_t: public Block {
+public:
+    Block_inv_t() {
+        set_shape();
+        type = 7;
+    }
+    void set_shape() {
+        shape.push_back({' ' , 'o'});
+        shape.push_back({'o', 'o', 'o'});
     }
 };
 
@@ -146,6 +160,7 @@ class Block_z: public Block {
 public:
     Block_z() {
         set_shape();
+        type = 8;
     }
     void set_shape() {
         shape.push_back({'o', 'o'});
